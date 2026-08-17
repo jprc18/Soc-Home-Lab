@@ -1,6 +1,6 @@
 ## 🎯 Objective
 
-The goal is to build a small SOC environment consisting of:
+The goal of this lab is to build a small SOC environment consisting of:
 
 * 🐧 Ubuntu → Splunk SIEM
 * 🐉 Kali Linux → Attacker machine
@@ -9,13 +9,15 @@ The goal is to build a small SOC environment consisting of:
 
 ![alt text](<Screenshot/My Homelab Architecture.png>)
 
+---
+
 ## ⚙️ Steps to Set Up the SOC Home Lab
 
 ### 🖥️ Step 1: Install VirtualBox
 
-Download and install **Oracle VirtualBox** on the host machine.
+**Oracle VirtualBox** was downloaded and installed on the host machine.
 
-VirtualBox will be used to create and run the virtual machines for the SOC Home Lab.
+VirtualBox was used to create and run the virtual machines for the SOC Home Lab.
 
 ![alt text](<Screenshot/VirtualBox Installation.png>)
 
@@ -23,7 +25,7 @@ VirtualBox will be used to create and run the virtual machines for the SOC Home 
 
 ### 💿 Step 2: Download the Operating Systems
 
-Download the ISO files for the operating systems that will be used in the lab:
+The ISO files for the operating systems used in the lab were downloaded:
 
 * 🐧 **Ubuntu** → Splunk SIEM
 * 🐉 **Kali Linux** → Attacker
@@ -35,9 +37,9 @@ Download the ISO files for the operating systems that will be used in the lab:
 
 ### 🐧 Step 3: Install Ubuntu
 
-Create a new virtual machine in VirtualBox and install **Ubuntu** using the downloaded ISO file.
+A new virtual machine was created in VirtualBox and **Ubuntu** was installed using the downloaded ISO file.
 
-Ubuntu will be used to host **Splunk Enterprise**.
+Ubuntu was used to host **Splunk Enterprise**.
 
 ![alt text](<Screenshot/Installing Ubuntu.png>)
 
@@ -45,9 +47,9 @@ Ubuntu will be used to host **Splunk Enterprise**.
 
 ### 🐉 Step 4: Install Kali Linux
 
-Create another virtual machine in VirtualBox and install **Kali Linux** using the downloaded ISO file.
+Another virtual machine was created in VirtualBox and **Kali Linux** was installed using the downloaded ISO file.
 
-Kali Linux will be used as the **attacker machine**.
+Kali Linux was configured as the **attacker machine**.
 
 ![alt text](<Screenshot/Installing Kali.png>)
 
@@ -55,9 +57,9 @@ Kali Linux will be used as the **attacker machine**.
 
 ### 🪟 Step 5: Install Windows
 
-Create another virtual machine in VirtualBox and install **Windows Server 2022 / Windows 10** using the downloaded ISO file.
+Another virtual machine was created in VirtualBox and **Windows Server 2022 / Windows 10** was installed using the downloaded ISO file.
 
-This machine will be used as the **end device / victim**.
+This machine was configured as the **end device / victim**.
 
 ![alt text](<Screenshot/Installing Windows Server 2022.png>)
 ![alt text](<Screenshot/Installing Win10.png>)
@@ -66,19 +68,20 @@ This machine will be used as the **end device / victim**.
 
 ### 📊 Step 6: Install Splunk Enterprise on Ubuntu
 
-After installing Ubuntu, download and install **Splunk Enterprise**.
+After installing Ubuntu, **Splunk Enterprise** was downloaded and installed.
 
-Splunk Enterprise will be used as the **SIEM** to collect, search, and analyze security logs from the Windows endpoint.
+Splunk Enterprise was configured as the **SIEM** for the lab to collect, search, and analyze security logs from the Windows endpoint.
 
 ![alt text](<Screenshot/Download Splunk Enterprise.png>)
 ![alt text](<Screenshot/Splunk Web Interface.png>)
+
 ---
 
 ### 📡 Step 7: Install Splunk Universal Forwarder on Windows Server 2022
 
-After installing Windows, download and install the **Splunk Universal Forwarder**.
+After installing Windows, the **Splunk Universal Forwarder** was downloaded and installed.
 
-The Universal Forwarder will collect Windows security logs and send them to the Splunk Enterprise server running on Ubuntu.
+The Universal Forwarder was configured to collect Windows security logs and send them to the **Splunk Enterprise server** running on Ubuntu.
 
 ![alt text](<Screenshot/Download Universal Forwarder.png>)
 ![alt text](<Screenshot/Installing Universal Forwarder.png>)
@@ -87,15 +90,15 @@ The Universal Forwarder will collect Windows security logs and send them to the 
 
 ### 🌐 Step 8: Configure the Lab Network
 
-Configure the virtual machines so that **Ubuntu, Kali Linux, and Windows** can communicate with each other.
+The virtual machines were configured so that **Ubuntu, Kali Linux, and Windows** could communicate with each other.
 
-Then configure the **Splunk Universal Forwarder** on Windows to forward Windows security logs to the **Splunk Enterprise server** running on Ubuntu.
+The **Splunk Universal Forwarder** on Windows was also configured to forward Windows security logs to the **Splunk Enterprise server** running on Ubuntu.
 
-The basic log flow will be:
+The basic log flow is:
 
 ![alt text](<Screenshot/Lab Flow.png>)
 
---- 
+---
 
 ## 🖥️ Final Lab Environment
 
@@ -107,7 +110,7 @@ The SOC Home Lab consists of three virtual machines, each with a specific role:
 
 ### 🐉 Kali Linux — Attacker
 
-Kali Linux will be used to simulate attacks against the Windows endpoint.
+Kali Linux is configured as the **attacker machine** and will be used to simulate attacks against the Windows endpoint.
 
 ![Kali Linux](Screenshot/Kali.png)
 
@@ -115,7 +118,7 @@ Kali Linux will be used to simulate attacks against the Windows endpoint.
 
 ### 🪟 Windows Server 2022 — End Device
 
-Windows Server 2022 will act as the monitored endpoint. The **Splunk Universal Forwarder** will collect and forward its security logs to Splunk.
+Windows Server 2022 is configured as the **monitored endpoint**. The **Splunk Universal Forwarder** is installed to collect and forward its security logs to Splunk.
 
 ![Windows Server 2022](<Screenshot/Windows Server 2022.png>)
 
@@ -123,11 +126,12 @@ Windows Server 2022 will act as the monitored endpoint. The **Splunk Universal F
 
 ### 🐧 Ubuntu — Splunk SIEM
 
-Ubuntu will host **Splunk Enterprise**, which will receive, search, and analyze the security logs collected from the Windows endpoint.
+Ubuntu is configured to host **Splunk Enterprise**, which receives, searches, and analyzes the security logs collected from the Windows endpoint.
 
 ![Ubuntu](Screenshot/Ubuntu.png)
+
 ![alt text](<Screenshot/Splunk Web Interface.png>)
 
 ---
 
-At this point, all virtual machines are installed and the basic SOC Home Lab environment is ready for the next stage.
+At this point, the virtual machines and Splunk components are installed and configured, providing the foundation for the SOC Home Lab.
