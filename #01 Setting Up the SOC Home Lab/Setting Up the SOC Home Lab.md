@@ -96,7 +96,9 @@ The **Splunk Universal Forwarder** on Windows was also configured to forward Win
 
 The basic log flow is:
 
-![alt text](<Screenshot/Lab Flow.png>)
+<p align="center">
+  <img src="Screenshot/Lab Flow.png" alt="Lab Flow" width="500">
+</p>
 
 ---
 
