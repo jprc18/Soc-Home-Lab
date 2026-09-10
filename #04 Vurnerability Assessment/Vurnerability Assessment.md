@@ -108,15 +108,4 @@ From 133 down to 10 Critical Severity
 
 ---
 
-## 🎯 What This Lab Demonstrated
-
-- 🔎 Vulnerability scanning with Nessus
-- 🔐 Authenticated vulnerability assessment
-- ⚠️ Vulnerability prioritization
-- 🛠️ Vulnerability remediation
-- ✅ Remediation verification
-- 📝 Basic vulnerability management workflow
-
----
-
 > **Note:** All scans and remediation activities were performed in a controlled lab environment for learning and security testing purposes.
